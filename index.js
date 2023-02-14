@@ -23,6 +23,10 @@ db.connect((err) => {
     console.log("MySql Connected");
 });
 
+app.get("/", (req, res) => {
+    res.json({message:"Hello"});
+});
+
 app.post("/api/signUp", (req, res) => {
     let post = { email: req.body.email, password:  req.body.password};
     let sql = "INSERT INTO User SET ?";
